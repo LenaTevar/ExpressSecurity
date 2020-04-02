@@ -23,7 +23,7 @@ gristController.index = async (request, response) => {
 }
 
 gristController.oneCard = async (request, response) => {
-  const data = await Gist.findById(request.params.id).exec()
+  const data = await Gist.findById(request.params.id).lean().exec()
   response.render('grist/public/gist', { data })
 }
 
